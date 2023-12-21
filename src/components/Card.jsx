@@ -4,9 +4,11 @@ import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../contracts";
 import Web3 from "web3";
 import { useEffect, useState } from "react";
 function Card() {
+  const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(false);
   const [balance, setBalance] = useState(0);
   const { address, isConnected } = useAccount();
+
   const checkBalance = async () => {
     const web3 = new Web3(window.ethereum);
     // console.log(address);
@@ -17,6 +19,20 @@ function Card() {
     setBalance(Web3.utils.fromWei(balance, "ether"));
     // console.log(Web3.utils.fromWei(balance, "ether"));
   };
+
+  // set device based on screen size change (mobile or desktop)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setDevice("mobile");
+      } else {
+        setDevice("desktop");
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const claimTokens = async () => {
     setLoading(true);
@@ -34,8 +50,14 @@ function Card() {
   };
 
   useEffect(() => {
-    if (isConnected) {
-      checkBalance();
+    try {
+      if (isConnected) {
+        checkBalance();
+      } else {
+        setBalance(0);
+      }
+    } catch (e) {
+      console.log(e);
     }
   }, [address]);
 
@@ -58,7 +80,7 @@ function Card() {
                 <span>
                   {
                     {
-                      true: address,
+                      true: device === "mobile" ? address.slice(0, 6) + "..." + address.slice(-4) : address,
                       false: "Not Connected",
                       undefined: "Not Connected",
                     }[isConnected]

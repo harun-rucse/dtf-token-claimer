@@ -223,7 +223,7 @@ contract TokenVault is Ownable(msg.sender) {
     mapping(address => uint256) public whitelist; // Whitelist of addresses and their claimable token amounts
 
     event TokenDeposited(address indexed depositor, uint256 amount);
-    event Whitelisted(address indexed account, uint256 amount);
+    event Whitelisted();
     event TokensClaimed(address indexed account, uint256 amount);
 
     constructor(address _tokenAddress) {
@@ -246,9 +246,11 @@ contract TokenVault is Ownable(msg.sender) {
             uint256 amount = amounts[i];
             require(account != address(0), "Invalid address");
             require(amount > 0, "Claimable amount must be greater than 0");
-            whitelist[account] = whitelist[account] + amount; // Add to existing claimable amount
-            emit Whitelisted(account, amount);
+            unchecked {
+                whitelist[account] = whitelist[account] + amount; // Add to existing claimable amount
+            }
         }
+        emit Whitelisted();
     }
 
     // Allows whitelisted addresses to claim tokens
