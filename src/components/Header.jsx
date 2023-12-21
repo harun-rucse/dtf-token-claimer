@@ -15,10 +15,14 @@ function Header() {
             <img src="/images/logo.png" alt="Logo" className="w-[40px] md:w-[55px] rounded-full" />
             <ul className="flex items-center gap-4 md:gap-8 text-sm font-medium">
               <li className="hover:text-gray-500 transition">
-                <a href="#">Telegram</a>
+                <a href="https://t.me/communitytrustfund" target="_blank" rel="noreferrer">
+                  Telegram
+                </a>
               </li>
               <li className="hover:text-gray-500 transition">
-                <a href="#">Website</a>
+                <a href="https://ctf.vision" target="_blank" rel="noreferrer">
+                  Website
+                </a>
               </li>
             </ul>
           </div>

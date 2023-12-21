@@ -3,10 +3,12 @@ import Container from "./Container";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../contracts";
 import Web3 from "web3";
 import { useEffect, useState } from "react";
+
 function Card() {
   const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(false);
   const [balance, setBalance] = useState(0);
+
   const { address, isConnected } = useAccount();
 
   const checkBalance = async () => {
@@ -19,20 +21,6 @@ function Card() {
     setBalance(Web3.utils.fromWei(balance, "ether"));
     // console.log(Web3.utils.fromWei(balance, "ether"));
   };
-
-  // set device based on screen size change (mobile or desktop)
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setDevice("mobile");
-      } else {
-        setDevice("desktop");
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const claimTokens = async () => {
     setLoading(true);
@@ -49,7 +37,22 @@ function Card() {
     }
   };
 
+  // set device based on screen size change (mobile or desktop)
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setDevice("mobile");
+      } else {
+        setDevice("desktop");
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!window.ethereum) return;
     try {
       if (isConnected) {
         checkBalance();
@@ -65,7 +68,7 @@ function Card() {
     <div className="pt-10">
       <Container>
         <h2 className="text-2xl text-[#7e858e] mb-6" style={{ fontFamily: "ClashDisplay-Semibold" }}>
-          DTF Token Claimer
+          CTF Token Claimer
         </h2>
 
         <div className="gradient text-[#050505] shadow-md text-sm border rounded-xl p-4 md:p-12 space-y-4">
@@ -80,7 +83,7 @@ function Card() {
                 <span>
                   {
                     {
-                      true: device === "mobile" ? address.slice(0, 6) + "..." + address.slice(-4) : address,
+                      true: device === "mobile" ? address?.slice(0, 6) + "..." + address?.slice(-4) : address,
                       false: "Not Connected",
                       undefined: "Not Connected",
                     }[isConnected]
@@ -103,9 +106,9 @@ function Card() {
                       No airdrop balance found. Are you sure you've connected the correct wallet?
                     </span>{" "}
                     ·{" "}
-                    <a href="" className="text-blue-500 underline">
+                    {/* <a href="" className="text-blue-500 underline">
                       Contact Us
-                    </a>
+                    </a> */}
                   </>
                 )}
               </p>
@@ -115,15 +118,15 @@ function Card() {
                 className="bg-[#e5e7eb] self-start md:self-center text-gray-800 px-4 py-2 rounded-lg shadow-md"
                 onClick={claimTokens}
               >
-                {loading ? "Claiming..." : "Claim DTF"}
+                {loading ? "Claiming..." : "Claim CTF"}
               </button>
             )}
 
-            {balance <= 0 && (
+            {/* {balance <= 0 && (
               <button className="bg-[#e5e7eb] self-start md:self-center text-gray-800 px-4 py-2 rounded-lg">
                 Contact us for help
               </button>
-            )}
+            )} */}
           </div>
         </div>
       </Container>

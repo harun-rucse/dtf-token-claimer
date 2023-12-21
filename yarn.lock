@@ -253,6 +253,11 @@
     stream-browserify "^3.0.0"
     util "^0.12.4"
 
+"@enzoferey/network-gas-price@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@enzoferey/network-gas-price/-/network-gas-price-0.3.6.tgz#31e6077af7436e9f0f3e07d896c6261b4d56aeb5"
+  integrity sha512-YIohzrbEGY63Z3D+R2ir2wB5/l1n+52SlCNxsRmTHrz9Ul9myrm3U91E/8q8A5lyPsbi57626b4c/Ft/L5LKNw==
+
 "@esbuild/android-arm64@0.19.9":
   version "0.19.9"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.9.tgz#683794bdc3d27222d3eced7b74cad15979548031"
@@ -2261,6 +2266,11 @@ csstype@^3.0.2, csstype@^3.1.3:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.3.tgz#d80ff294d114fb0e6ac500fbf85b60137d7eff81"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
+data-uri-to-buffer@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz#d8feb2b2881e6a4f58c2e08acfd0e2834e26222e"
+  integrity sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==
+
 dayjs@1.11.10:
   version "1.11.10"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.10.tgz#68acea85317a6e164457d6d6947564029a6a16a0"
@@ -2810,6 +2820,14 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+fetch-blob@^3.1.2, fetch-blob@^3.1.4:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/fetch-blob/-/fetch-blob-3.2.0.tgz#f09b8d4bbd45adc6f0c20b7e787e793e309dcce9"
+  integrity sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==
+  dependencies:
+    node-domexception "^1.0.0"
+    web-streams-polyfill "^3.0.3"
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/file-entry-cache/-/file-entry-cache-6.0.1.tgz#211b2dd9659cb0394b073e7323ac3c933d522027"
@@ -2884,6 +2902,13 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+formdata-polyfill@^4.0.10:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz#24807c31c9d402e002ab3d8c720144ceb8848423"
+  integrity sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==
+  dependencies:
+    fetch-blob "^3.1.2"
 
 fraction.js@^4.3.6:
   version "4.3.7"
@@ -3403,6 +3428,14 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
+isomorphic-unfetch@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/isomorphic-unfetch/-/isomorphic-unfetch-4.0.2.tgz#5fc04eeb1053b7b702278e2cf7a3f246cb3a9214"
+  integrity sha512-1Yd+CF/7al18/N2BDbsLBcp6RO3tucSW+jcLq24dqdX5MNbCNTw1z4BsGsp4zNmjr/Izm2cs/cEqZPp4kvWSCA==
+  dependencies:
+    node-fetch "^3.2.0"
+    unfetch "^5.0.0"
+
 isomorphic-ws@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-4.0.1.tgz#55fd4cd6c5e6491e76dc125938dd863f5cd4f2dc"
@@ -3839,6 +3872,11 @@ node-addon-api@^7.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-7.0.0.tgz#8136add2f510997b3b94814f4af1cce0b0e3962e"
   integrity sha512-vgbBJTS4m5/KkE16t5Ly0WW9hz46swAstv0hYYwMtbG7AznRhNyfLRe8HZAiWIpcHzoO7HxhLuBQj9rJ/Ho0ZA==
 
+node-domexception@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/node-domexception/-/node-domexception-1.0.0.tgz#6888db46a1f71c0b76b3f7555016b63fe64766e5"
+  integrity sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==
+
 node-fetch-native@^1.4.0, node-fetch-native@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/node-fetch-native/-/node-fetch-native-1.4.1.tgz#5a336e55b4e1b1e72b9927da09fecd2b374c9be5"
@@ -3850,6 +3888,15 @@ node-fetch@^2.6.12:
   integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
   dependencies:
     whatwg-url "^5.0.0"
+
+node-fetch@^3.2.0:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.3.2.tgz#d1e889bacdf733b4ff3b2b243eb7a12866a0b78b"
+  integrity sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==
+  dependencies:
+    data-uri-to-buffer "^4.0.0"
+    fetch-blob "^3.1.4"
+    formdata-polyfill "^4.0.10"
 
 node-forge@^1.3.1:
   version "1.3.1"
@@ -4941,6 +4988,11 @@ unenv@^1.7.4:
     node-fetch-native "^1.4.1"
     pathe "^1.1.1"
 
+unfetch@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-5.0.0.tgz#8a5b6e5779ebe4dde0049f7d7a81d4a1af99d142"
+  integrity sha512-3xM2c89siXg0nHvlmYsQ2zkLASvVMBisZm5lF3gFDqfF2xonNStDJyMpvaOBe0a1Edxmqrf2E0HBdmy9QyZaeg==
+
 unstorage@^1.9.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/unstorage/-/unstorage-1.10.1.tgz#bf8cc00a406e40a6293e893da9807057d95875b0"
@@ -5084,6 +5136,11 @@ wagmi@^1.4.12:
     "@wagmi/core" "1.4.12"
     abitype "0.8.7"
     use-sync-external-store "^1.2.0"
+
+web-streams-polyfill@^3.0.3:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz#71c2718c52b45fd49dbeee88634b3a60ceab42a6"
+  integrity sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==
 
 web3-core@^4.3.0, web3-core@^4.3.2:
   version "4.3.2"
